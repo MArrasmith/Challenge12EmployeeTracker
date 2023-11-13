@@ -10,9 +10,9 @@ const userPrompts = () => {
                     'View All Roles',
                     'View All Employees',
                     'View Employees by Manager',
-                    'Add a Department',
-                    'Add a Role',
-                    'Add an Employee',
+                    'Add New Department',
+                    'Add New Role',
+                    'Add New Employee',
                     'Update Employee Manager',
                     'Update Employee Role'
                 ]
@@ -34,13 +34,13 @@ const userPrompts = () => {
             if (choices === 'View Employees By Manager') {
                 viewEmployeesByManager();
             }
-            if (choices === 'Add a Department') {
+            if (choices === 'Add New Department') {
                 addNewDepartment();
             }
-            if (choices === 'Add a Role') {
+            if (choices === 'Add New Role') {
                 addNewRole();
             }
-            if (choices === 'Add an Employee') {
+            if (choices === 'Add New Employee') {
                 addNewEmployee();
             }
             if (choices === 'Update Employee Manager') {

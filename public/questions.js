@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-
+const db = require('../server.js')
 const questions = () => {
     return inquirer.prompt([
         {
@@ -43,7 +43,24 @@ const questions = () => {
                 updateEmployeeRole();
             }
         });
+
+        // switch (choices) {
+        //     case 'View All Departments':
+        //         viewAllDepartments();
+        //         break;
+        
+        //     default:
+        //         break;
+        // }
 };
 
+const viewAllDepartments = () => {
+    console.log('VIEW * department')
+    db.query('SELECT * FROM department', function (err, results) {
+        console.log(results);
+        if (err)
+         console.log(err)
+      });
+}
 
-module.exports = questions()
+module.exports = questions

@@ -1,4 +1,6 @@
-const userPrompts = () => {
+const inquirer = require('inquirer');
+
+const questions = () => {
     return inquirer.prompt([
         {
             type: 'list',
@@ -18,37 +20,30 @@ const userPrompts = () => {
                 ]
         }
     ])
-
         .then((answers) => {
             const { choices } = answers;
 
             if (choices === 'View All Departments') {
                 viewAllDepartments();
-            }
-            if (choices === 'View All Roles') {
+            } else if (choices === 'View All Roles') {
                 viewAllRoles();
-            }
-            if (choices === 'View All Employees') {
+            } else if (choices === 'View All Employees') {
                 viewAllEmployees();
-            }
-            if (choices === 'View Employees By Manager') {
+            } else if (choices === 'View Employees By Manager') {
                 viewEmployeesByManager();
-            }
-            if (choices === 'Add New Department') {
+            } else if (choices === 'Add New Department') {
                 addNewDepartment();
-            }
-            if (choices === 'Add New Role') {
+            } else if (choices === 'Add New Role') {
                 addNewRole();
-            }
-            if (choices === 'Add New Employee') {
+            } else if (choices === 'Add New Employee') {
                 addNewEmployee();
-            }
-            if (choices === 'Update Employee Manager') {
-                updateEmployeeManagers();
-            }
-            if (choices === 'Update Employee Role') {
+            } else if (choices === 'Update Employee Manager') {
+                updateEmployeeManager();
+            } else if (choices === 'Update Employee Role') {
                 updateEmployeeRole();
             }
         });
 };
-module.exports = userPrompts;
+
+
+module.exports = questions()
